@@ -1,14 +1,13 @@
-import {useState} from 'react'
+import {useState} from 'react';
 
-const App = () => {
-  const [item, setItem] = useState('')
-  const [info, setInfo] = useState(false)
+export function App() {
+    const [item, setItem] = useState('')
+    const [info, setInfo] = useState(false);
 
   const sub = e => {
     e.preventDefault();
-    console.log('item: ', item);
+    console.log('item:', item);
     setInfo(true)
-    setItem('');
   }
 
   return (
@@ -22,10 +21,9 @@ const App = () => {
       onChange={e => setItem(e.target.value)}
       />
     <button type='submit'>submit</button>
-    {info && <p>A informação fornecida é: {info}</p>}
     </form>
+    {info && <p>{item}</p>}
     </>
   )
 }
-
 export default App
